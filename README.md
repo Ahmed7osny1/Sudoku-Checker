@@ -33,6 +33,13 @@ The program includes the following test cases:
 
 ---
 
+## **Equation Description**
+
+<img src="https://github.com/Ahmed7osny1/Sudoku-Checker/blob/master/Equation%20test.jpg?raw=true" alt="IPv4 Address Checker Flowchart Description" width="800" height="1000">
+
+
+---
+
 *Flowchart*
 
 The flowchart below explains the decision-making process of the IPv4 checker.
@@ -40,5 +47,5 @@ The flowchart below explains the decision-making process of the IPv4 checker.
 
 #### *Flowchart Description*
 
-<img src="![image](https://github.com/user-attachments/assets/5bdf40e8-e5ce-45dc-a15b-10175ae7a525)" alt="IPv4 Address Checker Flowchart Description" width="800" height="1000">
+<img src="https://github.com/Ahmed7osny1/Sudoku-Checker/blob/master/Sudoku%20Checker%20Flow%20Chart.png?raw=true" alt="IPv4 Address Checker Flowchart Description" width="800" height="1000">
 
