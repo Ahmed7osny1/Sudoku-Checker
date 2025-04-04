@@ -1,23 +1,23 @@
 fun main(){
 
     testSudoku(
-        name = "valid Sudoku in 3 * 3 size",
+        name = "valid Sudoku in 3 * 3 size Without complete Board",
         result = isValidSudoku(
             listOf(
                 charArrayOf('3', '_', '_'),
-                charArrayOf('2', '_', '4'),
-                charArrayOf('1', '5', '_')
+                charArrayOf('2', '_', '3'),
+                charArrayOf('1', '3', '_')
             )
         ),
         correctResult = true
     )
     testSudoku(
-        name = "valid Sudoku in 3 * 3 size",
+        name = "valid Sudoku in 3 * 3 size With complete Board",
         result = isValidSudoku(
             listOf(
-                charArrayOf('1', '9', '6'),
-                charArrayOf('2', '7', '4'),
-                charArrayOf('3', '5', '8')
+                charArrayOf('1', '2', '3'),
+                charArrayOf('2', '3', '1'),
+                charArrayOf('3', '1', '2')
             )
         ),
         correctResult = true
@@ -37,9 +37,9 @@ fun main(){
         name = "Any row in the board contains a duplicate number in 3 * 3 size",
         result = isValidSudoku(
             listOf(
-                charArrayOf('1', '9', '6'),
-                charArrayOf('2', '7', '4'),
-                charArrayOf('3', '5', '5')
+                charArrayOf('1', '2', '3'),
+                charArrayOf('2', '3', '1'),
+                charArrayOf('3', '2', '2')
             )
         ),
         correctResult = false
@@ -48,9 +48,9 @@ fun main(){
         name = "Any column in the board contains a duplicate number in 3 * 3 size",
         result = isValidSudoku(
             listOf(
-                charArrayOf('1', '5', '6'),
-                charArrayOf('2', '7', '4'),
-                charArrayOf('3', '5', '8')
+                charArrayOf('1', '2', '3'),
+                charArrayOf('2', '1', '3'),
+                charArrayOf('3', '1', '2')
             )
         ),
         correctResult = false
@@ -59,9 +59,9 @@ fun main(){
         name = "The board contains symbols in 3 * 3 size",
         result = isValidSudoku(
             listOf(
-                charArrayOf('1', '5', '6'),
-                charArrayOf('2', '7', '@'),
-                charArrayOf('3', '5', '8')
+                charArrayOf('1', '2', '3'),
+                charArrayOf('2', '3', '@'),
+                charArrayOf('3', '1', '2')
             )
         ),
         correctResult = false
@@ -70,9 +70,9 @@ fun main(){
         name = "The board contains Character in 3 * 3 size",
         result = isValidSudoku(
             listOf(
-                charArrayOf('1', '5', '6'),
-                charArrayOf('2', '7', 'a'),
-                charArrayOf('3', '5', '8')
+                charArrayOf('1', '2', '3'),
+                charArrayOf('2', '3', 'a'),
+                charArrayOf('3', '1', '2')
             )
         ),
         correctResult = false
@@ -81,9 +81,9 @@ fun main(){
         name = "In a 3 * 3 board: contains invalid numbers (values outside the range)",
         result = isValidSudoku(
             listOf(
-                charArrayOf('1', '5', '6'),
-                charArrayOf('2', '7', 'a'),
-                charArrayOf('3', '5', '0')
+                charArrayOf('1', '2', '3'),
+                charArrayOf('2', '3', '1'),
+                charArrayOf('3', '1', '0')
             )
         ),
         correctResult = false
@@ -93,7 +93,7 @@ fun main(){
 
 
     testSudoku(
-        name = "valid Sudoku in 4 * 4 size",
+        name = "valid Sudoku in 4 * 4 size With complete Board",
         result = isValidSudoku(
             listOf(
                 charArrayOf('1', '2', '4', '3'),
@@ -105,7 +105,7 @@ fun main(){
         correctResult = true
     )
     testSudoku(
-        name = "valid Sudoku in 4 * 4 size",
+        name = "valid Sudoku in 4 * 4 size Without complete Board",
         result = isValidSudoku(
             listOf(
                 charArrayOf('_', '2', '4', '3'),
@@ -204,7 +204,7 @@ fun main(){
     //////////////////////////////////////////////////////////////////
 
     testSudoku(
-        name = "valid Sudoku in 9 * 9 size",
+        name = "valid Sudoku in 9 * 9 size Without complete Board",
         result = isValidSudoku(
             listOf(
                 charArrayOf('5', '3', '_', '_', '7', '_', '_', '_', '_'),
@@ -221,7 +221,7 @@ fun main(){
         correctResult = true
     )
     testSudoku(
-        name = "Valid Sudoku in 9 * 9 size",
+        name = "Valid Sudoku in 9 * 9 size With complete Board",
         result = isValidSudoku(
             listOf(
                 charArrayOf('5', '3', '4', '6', '7', '8', '9', '1', '2'),
@@ -340,7 +340,7 @@ fun main(){
         correctResult = false
     )
     testSudoku(
-        name = "In a 9 * 9 board: contains invalid numbers (values outside the range 1–9)",
+        name = "In a 9 * 9 board: contains invalid numbers (values outside the range)",
         result = isValidSudoku(
             listOf(
                 charArrayOf('5', '3', '_', '_', 'A', '_', '_', '_', '_'),
@@ -375,14 +375,136 @@ fun main(){
                 charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
                 charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
                 charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
-                charArrayOf('-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'),
                 charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
                 charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+            )
+        ), correctResult = true
+    )
+    testSudoku(
+        name = "Any row in the board contains a duplicate number in 16 * 16 size",
+        result = isValidSudoku(
+            listOf(
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '5', '5'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+            )
+        ), correctResult = false
+    )
+    testSudoku(
+        name = "Any column in the board contains a duplicate number in 16 * 16 size",
+        result = isValidSudoku(
+            listOf(
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '5'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '5'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+            )
+        ), correctResult = false
+    )
+    testSudoku(
+        name = "The board contains character in 16 * 16 size",
+        result = isValidSudoku(
+            listOf(
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', 'a'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+            )
+        ), correctResult = false
+    )
+    testSudoku(
+        name = "The board contains symbols in 16 * 16 size",
+        result = isValidSudoku(
+            listOf(
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '@'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+            )
+        ), correctResult = false
+    )
+    testSudoku(
+        name = "In a 16 * 16 board: contains invalid numbers (values outside the range)",
+        result = isValidSudoku(
+            listOf(
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
+                charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '0'),
                 charArrayOf('_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_'),
             )
         ), correctResult = false
     )
 
+    testSudoku(
+        name = "Board is zero cell",
+        result = isValidSudoku(
+            listOf()
+        ),
+        correctResult = false
+    )
     testSudoku(
         name = "Board has less OR more than size of(rows*column)",
         result = isValidSudoku(

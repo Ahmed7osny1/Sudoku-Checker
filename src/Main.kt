@@ -17,8 +17,7 @@ fun isValidSudoku(board: List<CharArray>): Boolean {
     val size = board.size
     val boxSize = sqrt(size.toDouble()).toInt()
 
-    if (board.any { it.size != size } ||
-        size !in listOf(0, 3, 4, 9, 16)) return false
+    if (board.any { it.size != size } || size !in listOf(3, 4, 9, 16)) return false
 
     for (i in 0..<size) {
         val rowSet = mutableSetOf<Char>()
@@ -28,11 +27,18 @@ fun isValidSudoku(board: List<CharArray>): Boolean {
         for (j in 0..<size) {
             val rowVal = board[i][j]
             val colVal = board[j][i]
-            val boxVal = if(size != 3)board[boxSize * (i / boxSize) + (j / boxSize)][boxSize * (i % boxSize) + (j % boxSize)] else board[i][j]
+            val boxVal =
+                if (size != 3) board[boxSize * (i / boxSize) + (j / boxSize)][boxSize * (i % boxSize) + (j % boxSize)] else board[i][j]
 
-            if (rowVal != '_' && !rowSet.add(rowVal)) return false
-            if (colVal != '_' && !colSet.add(colVal)) return false
-            if (boxVal != '_' && !boxSet.add(boxVal)) return false
+            if (rowVal != '_' && (!rowSet.add(rowVal) || !rowVal.isDigit() || rowVal.toString()
+                    .toInt() !in 1..size)
+            ) return false
+            if (colVal != '_' && (!colSet.add(colVal) || !colVal.isDigit() || colVal.toString()
+                    .toInt() !in 1..size)
+            ) return false
+            if (boxVal != '_' && (!boxSet.add(boxVal) || !boxVal.isDigit() || boxVal.toString()
+                    .toInt() !in 1..size)
+            ) return false
             if (!rowVal.isDigit() && rowVal != '_') return false
         }
     }
