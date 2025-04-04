@@ -39,7 +39,6 @@ fun isValidSudoku(board: List<CharArray>): Boolean {
             if (boxVal != '_' && (!boxSet.add(boxVal) || !boxVal.isDigit() || boxVal.toString()
                     .toInt() !in 1..size)
             ) return false
-            if (!rowVal.isDigit() && rowVal != '_') return false
         }
     }
     return true
