@@ -42,15 +42,19 @@ val boxVal = board[boxSize * (i / boxSize) + j / boxSize][boxSize * (i % boxSize
 i → The index of the current row (0 to size-1)
 j → The index of the current column (0 to size-1)
 Row Index Calculation:
-boxSize * (i / boxSize) + j / boxSize
-(i / boxSize) Determines which sub box row the element belongs to
-boxSize * (i / boxSize) Converts the sub box row into the starting row index of that box
-j / boxSize: Determines the row within the sub box
+boxSize * (i / boxSize) + j / boxSize(i / boxSize) 
+Determines which sub box row the element belongs to
+boxSize * (i / boxSize) 
+Converts the sub box row into the starting row index of that box
+j / boxSize: 
+Determines the row within the sub box
 Column Index Calculation:
-boxSize * (i % boxSize) + j % boxSize
-(i % boxSize) Determines which sub box column we are working with
-boxSize * (i % boxSize)  Converts the sub box column into the starting column index of that box
-j % boxSize Determines the column within the sub box
+boxSize * (i % boxSize) + j % boxSize(i % boxSize) 
+Determines which sub box column we are working with
+boxSize * (i % boxSize)  
+Converts the sub box column into the starting column index of that box
+j % boxSize 
+Determines the column within the sub box
 ---------------------------------------------------------------
 Example in a 9×9 Sudoku boxSize = 3
 i = 4 and j = 5.
